@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="d20 Modern.css">
+</head>
+<body>
+    <div class="sheet-header">
+        <h1>Project MULE</h1>
+        <div class="sheet-character-info">
+            <input type="text" name="attr_character_name" placeholder="Character Name">
+            <input type="text" name="attr_background" placeholder="Background">
+            <input type="text" name="attr_race" placeholder="Race">
+            <input type="number" name="attr_level" placeholder="Level">
+            <input type="number" name="attr_xp" placeholder="XP">
+            <input type="text" name="attr_xp_to_next_level" placeholder="XP to Next Level" readonly>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <input type="radio" class="sheet-tab" name="attr_tab" value="1" id="tab1" checked>
+    <label for="tab1" class="sheet-tab-label">Combat & Common Rolls</label>
+
+    <input type="radio" class="sheet-tab" name="attr_tab" value="2" id="tab2">
+    <label for="tab2" class="sheet-tab-label">Attributes & Skills</label>
+
+    <input type="radio" class="sheet-tab" name="attr_tab" value="3" id="tab3">
+    <label for="tab3" class="sheet-tab-label">Inventory</label>
+
+    <input type="radio" class="sheet-tab" name="attr_tab" value="4" id="tab4">
+    <label for="tab4" class="sheet-tab-label">Perks, Traits, Faction Reputation</label>
+
+    <!-- Tab Content -->
+    <div class="sheet-tab-content" id="content1">
+        <h2>Combat & Common Rolls</h2>
+        
+        <!-- Action Points Counter -->
+        <div class="sheet-action-points">
+            <h3>Action Points</h3>
+            <div class="sheet-ap-circles">
+                <input type="checkbox" id="ap1"><label for="ap1"></label>
+                <input type="checkbox" id="ap2"><label for="ap2"></label>
+                <input type="checkbox" id="ap3"><label for="ap3"></label>
+                <input type="checkbox" id="ap4"><label for="ap4"></label>
+                <input type="checkbox" id="ap5"><label for="ap5"></label>
+            </div>
+        </div>
+
+        <!-- Health and Armor -->
+        <div class="sheet-health-armor">
+            <h3>Health</h3>
+            <input type="number" name="attr_current_hp" placeholder="Current HP">
+            <input type="number" name="attr_max_hp" placeholder="Max HP">
+
+            <h3>Armor</h3>
+            <input type="text" name="attr_armor_block" placeholder="Block">
+            <input type="number" name="attr_armor_uses" placeholder="Uses">
+        </div>
+
+        <!-- Weapons -->
+        <div class="sheet-weapons">
+            <h3>Primary Weapon</h3>
+            <input type="text" name="attr_primary_weapon_name" placeholder="Name">
+            <input type="number" name="attr_primary_weapon_ap" placeholder="AP">
+            <input type="text" name="attr_primary_weapon_damage" placeholder="Damage">
+            <input type="text" name="attr_primary_weapon_range" placeholder="Range">
+            <input type="number" name="attr_primary_weapon_ammo" placeholder="Ammo">
+            <input type="text" name="attr_primary_weapon_properties" placeholder="Properties">
+
+            <h3>Secondary Weapon</h3>
+            <input type="text" name="attr_secondary_weapon_name" placeholder="Name">
+            <input type="number" name="attr_secondary_weapon_ap" placeholder="AP">
+            <input type="text" name="attr_secondary_weapon_damage" placeholder="Damage">
+            <input type="text" name="attr_secondary_weapon_range" placeholder="Range">
+            <input type="number" name="attr_secondary_weapon_ammo" placeholder="Ammo">
+            <input type="text" name="attr_secondary_weapon_properties" placeholder="Properties">
+        </div>
+    </div>
+    <div class="sheet-tab-content" id="content2">
+        <h2>Attributes & Skills</h2>
+
+        <!-- Attributes -->
+        <div class="sheet-attributes">
+            <h3>Attributes (SPECIAL)</h3>
+            <table>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Score</th>
+                    <th>Modifier</th>
+                </tr>
+                <tr>
+                    <td>Strength</td>
+                    <td><input type="number" name="attr_strength" placeholder="5"></td>
+                    <td><input type="number" name="attr_strength_mod" readonly></td>
+                </tr>
+                <tr>
+                    <td>Perception</td>
+                    <td><input type="number" name="attr_perception" placeholder="5"></td>
+                    <td><input type="number" name="attr_perception_mod" readonly></td>
+                </tr>
+                <tr>
+                    <td>Endurance</td>
+                    <td><input type="number" name="attr_endurance" placeholder="5"></td>
+                    <td><input type="number" name="attr_endurance_mod" readonly></td>
+                </tr>
+                <tr>
+                    <td>Charisma</td>
+                    <td><input type="number" name="attr_charisma" placeholder="5"></td>
+                    <td><input type="number" name="attr_charisma_mod" readonly></td>
+                </tr>
+                <tr>
+                    <td>Intelligence</td>
+                    <td><input type="number" name="attr_intelligence" placeholder="5"></td>
+                    <td><input type="number" name="attr_intelligence_mod" readonly></td>
+                </tr>
+                <tr>
+                    <td>Agility</td>
+                    <td><input type="number" name="attr_agility" placeholder="5"></td>
+                    <td><input type="number" name="attr_agility_mod" readonly></td>
+                </tr>
+                <tr>
+                    <td>Luck</td>
+                    <td><input type="number" name="attr_luck" placeholder="5"></td>
+                    <td><input type="number" name="attr_luck_mod" readonly></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Skills -->
+        <div class="sheet-skills">
+            <h3>Skills</h3>
+            <table>
+                <tr>
+                    <th>Skill</th>
+                    <th>Attribute</th>
+                    <th>Rank</th>
+                    <th>Modifier</th>
+                </tr>
+                <tr>
+                    <td>Athletics</td>
+                    <td>Strength</td>
+                    <td><input type="number" name="attr_athletics_rank"></td>
+                    <td><input type="number" name="attr_athletics_mod" readonly></td>
+                </tr>
+                <tr>
+                    <td>Stealth</td>
+                    <td>Agility</td>
+                    <td><input type="number" name="attr_stealth_rank"></td>
+                    <td><input type="number" name="attr_stealth_mod" readonly></td>
+                </tr>
+                <tr>
+                    <td>Hacking</td>
+                    <td>Intelligence</td>
+                    <td><input type="number" name="attr_hacking_rank"></td>
+                    <td><input type="number" name="attr_hacking_mod" readonly></td>
+                </tr>
+                <!-- Add more skills as needed -->
+            </table>
+        </div>
+    </div>
+    <div class="sheet-tab-content" id="content3">
+        <h2>Inventory</h2>
+        
+        <!-- Inventory -->
+        <div class="sheet-inventory">
+            <h3>Items</h3>
+            <button type="action" name="attr_inventory_add" value="Add Item">Add Item</button>
+            <div class="sheet-repeating_inventory">
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Weight</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="attr_item_name" placeholder="Item Name"></td>
+                        <td><input type="number" name="attr_item_quantity" placeholder="1"></td>
+                        <td><input type="number" name="attr_item_weight" placeholder="0.0"></td>
+                        <td><input type="text" name="attr_item_description" placeholder="Description"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="sheet-tab-content" id="content4">
+        <!-- Perks, Traits, Faction Reputation content -->
+    </div>
+</body>
+</html>
