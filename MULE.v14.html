@@ -208,28 +208,29 @@
     <div class="sheet-tab-content" id="content4">
         <!-- Perks, Traits, Faction Reputation content -->
     </div>
+
+<script type="text/worker">
+        // Attribute Modifier Calculation (Score - 5)
+        on("change:strength change:perception change:endurance change:charisma change:intelligence change:agility change:luck", function(eventInfo) {
+            // Identify the attribute name from the event source
+            const attributeName = eventInfo.sourceAttribute; // e.g., "strength"
+            getAttrs([attributeName], function(values) {
+                const score = parseInt(values[attributeName], 10) || 0;
+
+                // Clamp the score between 1 and 10
+                const clampedScore = Math.max(1, Math.min(10, score));
+
+                // Calculate the modifier as (Score - 5)
+                const modifier = clampedScore - 5;
+
+                // Update the clamped score and the modifier
+                const updatedAttributes = {};
+                updatedAttributes[attributeName] = clampedScore;
+                updatedAttributes[`${attributeName}_mod`] = modifier;
+
+                setAttrs(updatedAttributes);
+            });
+        });
+    </script>
 </body>
-
-// Attribute Modifier Calculation (Score - 5)
-on("change:strength change:perception change:endurance change:charisma change:intelligence change:agility change:luck", function(eventInfo) {
-    // Identify the attribute name from the event source
-    const attributeName = eventInfo.sourceAttribute; // e.g., "strength"
-    getAttrs([attributeName], function(values) {
-        const score = parseInt(values[attributeName], 10) || 0;
-
-        // Clamp the score between 1 and 10
-        const clampedScore = Math.max(1, Math.min(10, score));
-
-        // Calculate the modifier as (Score - 5)
-        const modifier = clampedScore - 5;
-
-        // Update the clamped score and the modifier
-        const updatedAttributes = {};
-        updatedAttributes[attributeName] = clampedScore;
-        updatedAttributes[`${attributeName}_mod`] = modifier;
-
-        setAttrs(updatedAttributes);
-    });
-});
-
 </html>
