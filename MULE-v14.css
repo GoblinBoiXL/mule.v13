@@ -1,7 +1,7 @@
 /* General Styles */
 body {
-    font-family: 'Proxima Nova', sans-serif;
-    color: #FFD700; /* Yellow text */
+    font-family: 'Courier New', monospace;
+    color: #FFBF00; /* Glow amber text */
     background-color: #000; /* Black background */
     padding-top: 70px; /* Space for fixed header */
 }
@@ -11,17 +11,21 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #7F2108; /* Burnt orange */
-    color: #FFD700;
+    background-color: #333; /* Dark background */
+    color: #FFBF00;
     text-align: center;
     padding: 10px;
     z-index: 1000;
 }
 
+.sheet-header h1 {
+    color: #FFBF00; /* Ensure header text is glow amber */
+}
+
 .sheet-character-info input {
     background-color: #000;
-    color: #FFD700;
-    border: 1px solid #7F2108;
+    color: #FFBF00;
+    border: 1px solid #333;
     margin: 5px;
 }
 
@@ -32,26 +36,26 @@ body {
 
 .sheet-tab-label {
     display: inline-block;
-    background-color: #7F2108;
-    color: #FFD700;
+    background-color: #333;
+    color: #FFBF00;
     padding: 10px;
     cursor: pointer;
-    border: 1px solid #7F2108;
+    border: 1px solid #333;
     border-radius: 4px;
     margin: 5px;
 }
 
 .sheet-tab:checked + .sheet-tab-label {
-    background-color: #FFD700;
-    color: #7F2108;
+    background-color: #FFBF00;
+    color: #000;
 }
 
 .sheet-tab-content {
     display: none;
     padding: 20px;
     background-color: #000;
-    color: #FFD700;
-    border: 1px solid #7F2108;
+    color: #FFBF00;
+    border: 1px solid #333;
     border-radius: 4px;
 }
 
@@ -64,13 +68,13 @@ body {
 
 /* Combat & Common Rolls */
 .sheet-combat {
-    border: 2px solid #7F2108;
+    border: 2px solid #333;
     padding: 10px;
     margin: 10px 0;
 }
 
 .sheet-combat h2 {
-    color: #FF0000; /* Red highlights */
+    color: #FFBF00; /* Glow amber text */
 }
 
 /* Action Points */
@@ -90,8 +94,8 @@ body {
 .sheet-ap-circles label {
     width: 30px;
     height: 30px;
-    background-color: #7F2108;
-    border: 2px solid #FFD700;
+    background-color: #333;
+    border: 2px solid #FFBF00;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -100,7 +104,7 @@ body {
 }
 
 .sheet-ap-circles input[type="checkbox"]:checked + label {
-    background-color: #FFD700;
+    background-color: #FFBF00;
 }
 
 /* Health and Armor */
@@ -108,10 +112,14 @@ body {
     margin: 10px 0;
 }
 
+.sheet-health-armor h3 {
+    color: #FFBF00; /* Glow amber text */
+}
+
 .sheet-health-armor input {
     background-color: #000;
-    color: #FFD700;
-    border: 1px solid #7F2108;
+    color: #FFBF00;
+    border: 1px solid #333;
     margin: 5px;
 }
 
@@ -120,18 +128,22 @@ body {
     margin: 10px 0;
 }
 
+.sheet-weapons h3 {
+    color: #FFBF00; /* Glow amber text */
+}
+
 .sheet-weapons input {
     background-color: #000;
-    color: #FFD700;
-    border: 1px solid #7F2108;
+    color: #FFBF00;
+    border: 1px solid #333;
     margin: 5px;
 }
 
 /* XP to Next Level */
 #xp-to-next-level {
     background-color: #000;
-    color: #FFD700;
-    border: 1px solid #7F2108;
+    color: #FFBF00;
+    border: 1px solid #333;
     margin: 5px;
 }
 
@@ -147,16 +159,20 @@ body {
 
 .sheet-attributes th, .sheet-skills th, 
 .sheet-attributes td, .sheet-skills td {
-    border: 1px solid #7F2108;
+    border: 1px solid #333;
     padding: 10px;
     text-align: center;
+}
+
+.sheet-attributes h3, .sheet-skills h3 {
+    color: #FFBF00; /* Glow amber text */
 }
 
 .sheet-attributes input[type="number"], 
 .sheet-skills input[type="number"] {
     background-color: #000;
-    color: #FFD700;
-    border: 1px solid #7F2108;
+    color: #FFBF00;
+    border: 1px solid #333;
     text-align: center;
     width: 100%;
 }
@@ -172,23 +188,27 @@ body {
 }
 
 .sheet-inventory th, .sheet-inventory td {
-    border: 1px solid #7F2108;
+    border: 1px solid #333;
     padding: 10px;
     text-align: center;
+}
+
+.sheet-inventory h3 {
+    color: #FFBF00; /* Glow amber text */
 }
 
 .sheet-inventory input[type="text"], 
 .sheet-inventory input[type="number"] {
     background-color: #000;
-    color: #FFD700;
-    border: 1px solid #7F2108;
+    color: #FFBF00;
+    border: 1px solid #333;
     text-align: center;
     width: 100%;
 }
 
 .sheet-inventory button {
-    background-color: #7F2108;
-    color: #FFD700;
+    background-color: #333;
+    color: #FFBF00;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -197,6 +217,6 @@ body {
 }
 
 .sheet-inventory button:hover {
-    background-color: #FFD700;
-    color: #7F2108;
+    background-color: #FFBF00;
+    color: #000;
 }
