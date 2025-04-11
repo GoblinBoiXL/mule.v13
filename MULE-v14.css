@@ -103,6 +103,10 @@ body {
     cursor: pointer;
 }
 
+.ui-dialog .charsheet button[type=roll]::before {
+    content: "";
+}
+
 .sheet-ap-circles input[type="checkbox"]:checked + label {
     background-color: #FFBF00;
 }
@@ -219,4 +223,31 @@ body {
 .sheet-inventory button:hover {
     background-color: #FFBF00;
     color: #000;
+}
+
+/* Roll Button Styling */
+.roll-button {
+    background: linear-gradient(135deg, #FFBF00, #FF8C00); /* Gradient background */
+    color: #000; /* Black text */
+    font-family: 'Courier New', monospace; /* Consistent font */
+    font-weight: bold;
+    padding: 10px 20px; /* Padding for better size */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    box-shadow: 0px 4px 10px rgba(255, 191, 0, 0.5); /* Glowing shadow */
+}
+
+.roll-button:hover {
+    background: linear-gradient(135deg, #FF8C00, #FFBF00); /* Reverse gradient on hover */
+    color: #FFF; /* White text */
+    box-shadow: 0px 6px 15px rgba(255, 191, 0, 0.75); /* Stronger glow */
+    transform: scale(1.1); /* Slightly enlarge */
+}
+
+.roll-button:active {
+    background: linear-gradient(135deg, #FF6A00, #FFBF00); /* Darker gradient when clicked */
+    transform: scale(0.95); /* Slightly shrink on click */
+    box-shadow: 0px 2px 5px rgba(255, 191, 0, 0.3); /* Reduce shadow */
 }
