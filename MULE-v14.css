@@ -251,3 +251,14 @@ body {
     transform: scale(0.95); /* Slightly shrink on click */
     box-shadow: 0px 2px 5px rgba(255, 191, 0, 0.3); /* Reduce shadow */
 }
+
+/* Add a border to the entire page */
+body {
+    font-family: 'Courier New', monospace;
+    color: #FFBF00; /* Glow amber text */
+    background-color: #000; /* Black background */
+    padding-top: 70px; /* Space for fixed header */
+    margin: 0; /* Remove default margin */
+    border: 5px solid #FFBF00; /* Amber border */
+    box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
